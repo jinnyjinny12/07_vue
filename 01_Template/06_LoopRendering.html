@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="step01">
+        <h5>과일가게</h5>
+        <ol>
+        <li v-for="item in items">{{item}}</li>
+    </ol>
+    </div>
+    <hr>
+    
+    <!--
+        객체요소 loop
+    -->
+
+    <div id="step02">
+        <div v-for="info in profile">
+            {{info}}
+        </div>        
+        <ol>
+            <li v-for="info in profile">{{index}} : {{key}} : {{value}}</li>
+        </ol>
+    </div>
+
+    <hr>
+    <div id="step03">
+        <li v-for="n in 10">{{n}}</li>
+    </div>
+
+    <script>
+        const {createApp, ref, reative} = Vue;
+
+        createApp({
+            setup(){
+                const items = ref(['apple', 'Pineapple', 'Melon', "Watermelon"]);
+                return{
+                    items
+                }
+            }
+        }).mount("#step01")
+
+        createApp({
+            setup(){
+
+                const profile = reative({
+                name: "홍길동",
+                address: "서울시 강남구",
+                introduction: "Vue 전문가 의로운 홍길동"  
+            })
+
+            return{
+                profile
+            }
+
+            }
+
+        }).mount("#step02");
+
+    </script>
+    
+</body>
+</html>
