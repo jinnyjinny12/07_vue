@@ -10,11 +10,11 @@
     <div id="step01">
         <h5>과일가게</h5>
         <ol>
-        <li v-for="item in items">{{item}}</li>
-    </ol>
+            <li v-for="item in items">{{item}}</li>
+        </ol>
     </div>
+
     <hr>
-    
     <!--
         객체요소 loop
     -->
@@ -22,10 +22,12 @@
     <div id="step02">
         <div v-for="info in profile">
             {{info}}
-        </div>        
-        <ol>
-            <li v-for="info in profile">{{index}} : {{key}} : {{value}}</li>
-        </ol>
+        </div>
+        <!--
+            표현식
+            v-for="(값, 키, 순서) in 객체"
+        -->        
+        <li v-for="(value, key, index) in profile"> index={{index}} : key={{key}} : value={{value}}</li>
     </div>
 
     <hr>
@@ -33,8 +35,14 @@
         <li v-for="n in 10">{{n}}</li>
     </div>
 
+    <hr>
+    
+    <div id="step03">
+        <li v-for="n in 10">{{n}}</li>
+    </div>
+
     <script>
-        const {createApp, ref, reative} = Vue;
+        const {createApp, ref, reactive} = Vue;
 
         createApp({
             setup(){
@@ -47,20 +55,21 @@
 
         createApp({
             setup(){
-
                 const profile = reative({
                 name: "홍길동",
                 address: "서울시 강남구",
                 introduction: "Vue 전문가 의로운 홍길동"  
-            })
-
-            return{
-                profile
-            }
+                })
+                return{
+                    profile
+                }
 
             }
 
         }).mount("#step02");
+
+        createApp().mount("#step03")
+        createApp().mount("#step03")
 
     </script>
     

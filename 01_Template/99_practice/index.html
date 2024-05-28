@@ -45,7 +45,8 @@
             <div class="container">
 
                 <div v-for="item in jsonData" :key="item.id" class="character">
-                    <h5>이름 : {{item.name}}</h5>
+                    <h5>skill : {{item.skill}}</h5>
+                    <p>{{item.list}}</p>
                     <p>{{item.introduction}}</p>
                     <img :src=item.img />
                  
