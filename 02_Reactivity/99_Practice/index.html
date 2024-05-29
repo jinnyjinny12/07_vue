@@ -58,13 +58,14 @@
 
     <div class="row" id="app">
     
-        <h1>vue tempalte 이벤트 적용</h1>
             <!-- {{skill}} -->
         <div v-for="item in skill" :key="item.id" class="bordered">
             <h5>이름 : {{item.skill}}</h5>
             <p>{{item.introduction}}</p>
             <!-- <p>{{item.list}}</p> -->
-            <img v-for="img in item.imgs" :key="img" :src="img" />
+            <img :src="item.img" :alt="item.name">
+    
+            <!-- <img v-for="img in item.imgs" :key="img" :src="img" /> -->
         </div>
         
         <div v-for="item in character" :key="item.id" class="bordered">

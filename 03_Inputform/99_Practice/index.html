@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./data.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+
+
+  <!--
+    스킬모드 밑에 등록하기 버튼
+    등록하기 버튼을 클릭하면 입력화면으로 이동
+    입력화면 - 
+        보더
+            조회하기 버튼, 
+                스킬등록 드롭다운
+                    skill: 입력창 -> 라벨
+                    list: 입력창 -> 라벨
+                    introdcution: 입력창 -> 라벨
+                    img: 
+                        url 입력창 라벨 
+                        이미지 추가 버튼
+                등록하기 버튼      
+  -->
+ 
+<body>
+
+    <div id="app">
+        <div class="buttons">
+        <button v-if="!isInsertMode" @click="toggleMode">{{isCharacterMode ? 'skill mode' :'charater mode'}}</button>
+        <button @click="toggleInsertMode">{{isInsertMode ?  '조회하기' : '등록하기'}}</button>
+        <!--토글버튼+클릭모드 바인딩 -->
+        <!-- isCharacterMode 가 참이면 skillmode가 켜지고 거짓이면 character mode가 켜진다. -->
+        </div>
+
+        <div class="row">
+            <template v-if="isInsertMode">
+                <div class="bordered"> 
+                    <!-- <button @click="toggleCharacterMode">{{isCharacterMode ? 'skill 등록' : 'character 등록'}}</button>
+                    인물이나 스킬등록을 드롭다운 바로 바꿔주기 -->
+                    <select v-model="selected">
+                        <option value="skill 등록">skill 등록</option>
+                        <option value="character 등록">character 등록</option>
+                    </select>
+                    
+                    <div>
+                        <label>이름 : </label>
+                        <input v-model="formData.name">
+                    </div>
+                    <div>
+                        <label>소개 : </label>
+                        <input v-model="formData.introdcution">
+                    </div>
+                    <div v-if="selected === 'skill 등록'">
+                        <!-- 얘는 캐릭터 모드로 전환할 떄 나타남.  -->
+                        <label>스킬 : </label>
+                        <input v-model="formData.skill">
+                    </div>
+                    <div>
+                        <div v-if="selected === 'character 등록'">
+                        <label>이미지 URL: </label>
+                        <input v-model="formData.img">
+                    </div>
+
+                    <div v-if="selected === 'skill 등록'">
+                        <label>이미지 url:</label>
+                        <div v-for="(img, index) in imgs" :key="index">
+                            <br><input v-model="imgs[index]"/>
+                        </div>
+                        <br><br>
+                        <button @click="toAddImg">이미지 추가</button>
+                    </div>
+                           
+                    <button @click="submitForm">등록하기</button>
+                </div>
+
+            </template>
+
+<!-- 
+            <template v-if="isCharacterMode"> -->
+            <tmeplate v-else-if="isCharacterMode">
+                <div v-for="item in jsonData" :key="item.id">
+                    <div class="bordered">
+                        <p>이름 : {{ item.name }}</p>
+                        <p>소개 : {{ item.introduction }}</p>
+                        <img :src="item.img" :alt="item.name">
+                    </div>
+                </div>
+            </tmeplate>
+
+            <template v-else>
+                <div v-for="item in jsonSkill" :key="item.id">
+                    <div class="bordered">
+                        <p>이름 : {{ item.skill }}</p>
+                        <p>소개 : {{ item.introduction }}</p>
+                        <div class="skill-image">
+                                <div v-for="img in item.imgs" :key="img">
+                                    <img :src="img" :alt="item.skill">
+                                </div>
+                            
+                            <!-- <div v-for="img in item.imgs" :key="img">
+                                <img :src="img" :alt="item.skill">
+                            </div> -->
+
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+
+    <script>
+        const { createApp, ref } = Vue;
+
+        createApp({
+            setup() {
+                const jsonData = ref(scholar);
+                const jsonSkill = ref(msaSkill);
+                const isCharacterMode = ref(true);
+                const isInsertMode = ref(true);
+                const imgs = ref(['']);
+                const formData = ref({
+                    name: '',
+                    introduction: '',
+                    skill: '',
+                    img: []
+                })
+
+                const newImageUrl = ref('');
+                const addImage = () => {
+                     if(newImageUrl.value) {
+                        formData.value.imgs.push(newImageUrl.value);
+                        newImageUrl.value= '';
+                     }
+                }
+              
+                const toAddImg = () => {
+                    imgs.value.push('');
+                }; 
+
+
+                const selected = ref("skill 등록");
+
+                const toggleMode = () => {
+                    isCharacterMode.value = !isCharacterMode.value;
+                };
+
+
+                const toggleCharacterMode = () => {
+                    isCharacterMode.value = !isCharacterMode.value;
+                }
+
+                const toggleInsertMode = () =>{
+                    console.log("sd")
+                    isInsertMode.value =!isInsertMode.value;
+                }
+
+
+                const submitForm = () => {
+                    if (selected.value === 'character 등록') {
+                        jsonData.value.push({ ...formData.value, id: Date.now() });
+                    } else {
+                        jsonSkill.value.push({
+                            skill: formData.value.skill,
+                            introduction: formData.value.introduction,
+                            imgs: [formData.value.img],
+                            id: Date.now()
+                        })
+                    }
+                    
+                    formData.value.name= '';
+                    formData.value.introduction= '';
+                    formData.value.skill = '';
+                    formData.value.img = '';
+                    // isInsertMode.value = false;
+                }
+
+                return {
+                    jsonData,
+                    jsonSkill,
+                    isCharacterMode,
+                    toggleMode,
+                    toggleCharacterMode,
+                    toggleInsertMode,
+                    formData,
+                    toAddImg,
+                    isInsertMode,
+                    submitForm,
+                    selected
+
+                };
+            }
+        }).mount("#app");
+    </script>
+</body>
+
+</html>

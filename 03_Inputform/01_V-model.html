@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Document</title>
+
+    <style>
+        div{
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        .custom-input input{
+            width: 200px;
+            padding: 5px;
+            border: 1px solid #ccc;
+        } 
+
+    </style>
+    
+</head>
+<body>
+    <!--
+        V-model -intro
+        프론트엔드에서 양식을 다룰 때 자바스크립에서 양식 입력 요소의 상태를 해당상태와
+        동기화해야 하는 경우가 있다. 이 때 값 바인ㄴ딩을 수동으로 처리하고 이벤트 수신을 통해
+        변경하는 것은 매우 번거로운 작업이 될 것이다.
+    -->
+
+    <div id="step01">
+        <label>이름: </label><input v-bind:value="text" v-on:input="event => inputText(event)"/>
+        <!-- 라벨은 입력란이다.
+        input은 사용자에게 텍스트를 입력받기 위해 사용된다
+        v-bind 속성을 데이터에 바인딩하게 사용되고 value 속성은 text라는 데이터 속성에서 바인딩된다
+
+        input 이벤트가 발생할 때마다 input text 메서드가 호출된다
+        input text 메서드는 event => inputText(event) 는 이벤트 객체를 input 메서드로 전달한다.   -->
+
+        <br>
+        <label>주소: </label><input v-bind:value="text" v-on:input="inputText($event)"/>
+    </div>
+    
+    <div id="step02">
+        <div> 
+            <h4>name : {{name}}</h4>
+            <h4>address : {{address}}</h4>
+            <h4>age : {{age}}</h4>
+            <h4>introduce : {{introduce}}</h4>
+        </div>
+        <label>이름 : </label><input v-model="name"/>
+        <br>
+        <label>주소 : </label><input v-model="address"/>
+        <br>
+        <label>나이 : </label><input type="number" v-model.number="age"/>
+        <!-- tpye 으로 막아주고 여기에 입력된건 숫자야라고 말해주는거? 아 뒤에건 모르겠다 -->
+        <!-- <input type="number" v-model="age"/> -->
+        <br>
+        <label>자기소개 : </label><input v-model.trim="introduce"/>
+        <!-- V-MODEL 속성을 찾아보면 더 많다 -->
+
+    </div>
+
+    <div id="step03">
+        <p>vue에 대한 여러분의 생각을 입력해주세요! : {{message}}</p>
+        <textarea v-model="message"></textarea>
+        <br>
+        <p> 느리게 반영되는 MSG: {{msg}}</p>
+        <textarea v-model.lazy="msg"></textarea>
+    </div>
+
+    <br>
+    <div id="step04">
+        <p>단일 선택 : {{selected}}</p>
+        <select v-model="selected" @chnage="check">
+            <option value="apple">apple</option>
+            <option value="pineapple">pineapple</option>
+            <option value="grape">grape</option>
+        </select>
+
+        <p>다중선택 : {{fruits}}</p>
+        <select v-model="fruits" multiple>
+            <!-- // 셀렉트 박스에서 여러가지 선택을 할 수 있게 만들어졌따 -->
+            <option value="apple">apple</option>
+            <option value="pineapple">pineapple</option>
+            <option value="grape">grape</option>
+            <!--여기서는 배열타입으로 자료형이 반환된다/-->
+
+        </select>
+        <!-- <input type="file" multiple/>
+ -->
+    </div>
+
+    <br>
+    <div id="step05">
+
+        <!-- 라디오는 동그라미
+        체크박스는 네모
+        id 와 for을 통일하면 apple이라는 text를 선택해도 체크된다. -->
+        
+        <p>과일목록 :{{fruits}}</p>
+        <input type="radio" id="apple" name="check" value="apple" v-model="fruits"/>
+        <label for="apple">apple</label>
+
+        <input type="checkbox" id="pineapple" name="check" value="pineapple" v-model="fruits"/>
+        <label for="app">pineapple</label>
+
+        <input type="checkbox" id="grape" name="check" value="grape" v-model="fruits"/>
+        <label for="app">grape</label>
+        
+        <br>
+        <p>toggle : {{toggle}}</p>
+        <input type="checkbox" v-model="toggle" :true-value="dynamicTrueValue" :false-value="dynamicFalseValue" />
+        
+        <!-- true에 있는 값을 toggle 에 전달해줌
+        false에 있는 값을 toggle 에 전달해줌 -->
+
+    </div>
+
+
+    <br>
+
+    <div id="step06">
+        <p>pick :{{pick}}</p>
+        <input type="radio" id="first" name="choice" v-model="pick" value="first" />
+        <label for="first">first</label>
+
+        <input type="radio" id="second" name="choice" v-mode="pick" value="second"/>
+        <label for="second">second</label>
+    </div>
+
+
+    <div id="step07">
+        <p>Checkbox Group 선택 결과: {{checkboxSelections}}</p>
+        <input type="checkbox" id="option1" name="options" value="option1" v-model="checkboxSelections" />
+        <label for="option1">Option 1</label>
+        <input type="checkbox" id="option2" name="options" value="option2" v-model="checkboxSelections" />
+        <label for="option2">Option 2</label>
+        <input type="checkbox" id="option3" name="options" value="option3" v-model="checkboxSelections" />
+        <label for="option3">Option 3</label>
+    </div>
+
+    
+    <div id="step08">
+        <p>Radio Button Group 선택 결과: {{radioSelection}}</p>
+        <input type="radio" id="optionA" name="radioOptions" value="A" v-model="radioSelection" />
+        <label for="optionA">Option A</label>
+        <input type="radio" id="optionB" name="radioOptions" value="B" v-model="radioSelection" />
+        <label for="optionB">Option B</label>
+        <input type="radio" id="optionC" name="radioOptions" value="C" v-model="radioSelection" />
+        <label for="optionC">Option C</label>
+    </div>
+
+    <script>
+        const {createApp, ref, reactive} = Vue;
+
+        createApp({
+            setup(){
+                const text = ref("");
+                function inputText(event) {
+                    text.value = event.target.value;
+
+                }
+
+                return{
+                    text,
+                    inputText
+                }
+
+            }
+        }).mount("#step01");
+
+
+        createApp({
+            setup(){
+                const name = ref("");
+                const address = ref("");
+                const age = ref("");
+                const introduce = ref("");
+
+                return {
+                    name,
+                    address,
+                    age,
+                    introduce
+                }
+            }
+
+        }).mount("#step02")
+
+        createApp({
+            setup(){
+                const message = ref("");
+                const msg = ref("");
+                return {message, msg}
+            }
+
+        }).mount("#step03")
+
+
+    
+
+
+        createApp({
+            setup(){
+                const selected = ref("apple");
+                const fruits = ref();
+
+                const check = ()=>{
+                    console.log(selected.value);
+                }
+
+                return{
+                    selected,
+                    fruits,
+                    check
+                }
+
+            }
+        }).mount("#step04")
+
+
+        createApp({
+            setup(){
+                const fruits = ref([]);
+                const toggle = ref();
+                const dynamicTrueValue = ref("선택됨");
+                const dynamicFalseValue = ref("선택안됨");
+                // 한국어로 쳐도 인식되나? 한국어를 인식되는게 아니라 선택시 "선택됨" 이 출력됨! ? 
+
+                return {
+                    fruits,
+                    toggle,
+                    dynamicTrueValue,
+                    dynamicFalseValue
+                }
+                
+            }
+        }).mount("#step05");
+
+
+        createApp({
+            setup(){
+                const pick = ref();
+                return {
+                    pick
+                }
+            }
+
+        }).mount("#step06")
+
+
+        createApp({
+            setup(){
+                const checkboxSelections= ref([]);
+                return {
+                    checkboxSelections
+                }
+            }
+        }).mount("#step07")
+
+        createApp({
+            setup() {
+                const radioSelection = ref('');
+                return {
+                    radioSelection
+                }
+            }
+        }).mount("#step08")
+
+    </script>
+
+</body>
+</html>

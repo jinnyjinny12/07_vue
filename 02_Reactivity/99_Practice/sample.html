@@ -13,6 +13,9 @@
 <body>
     <div id="app">
         <button @click="toggleMode">{{isCharacterMode ? 'skill mode' :'charater mode'}}</button>
+        <!--토글버튼+클릭모드 바인딩 -->
+        <!-- isCharacterMode 가 참이면 skillmode가 켜지고 거짓이면 character mode가 켜진다. -->
+
         <div class="row">
             <template v-if="isCharacterMode">
                 <div v-for="item in jsonData" :key="item.id">
