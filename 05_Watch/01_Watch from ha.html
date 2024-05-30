@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        watch
+        데이터의 변경을 감지하고 그에 따라 특정 동작을 수행하는 훅스이다.
+        watch는 vue 인스턴스가생성되고 setup 함수 내부에서 사용된다.
+
+        [표현식]
+        watch(propertyName, callback(newValue, oldValue) =>{
+            1. propertyName : 변경을 감지할 속성
+            2. newValue : 현재 입력된 새로운 값
+            3. oldValue : 입력 이전의 값
+
+            변경 감지 시 수행할 동작
+        })
+     -->
+
+    <div id="step01">
+        <p>현재 값 : {{currentValue}}</p>
+        <p>이전 값 : {{previousValue}}</p>
+        <input v-model="currentValue"/>
+
+    </div>
+
+    <script>
+        const {createApp, watch, ref, reactive} = Vue; //이런코드를 구조 분해 할당이라고 한다.
+       
+        createApp({
+            setup(){
+                const currentValue = ref();
+                const previousValue = ref();
+
+                watch(currentValue, async(newVal, oldVal) =>{
+
+                    // async 나를 동기화해줘, 나를 기다려줘
+
+                    if(newVal !== previousValue.value){
+                        console.log(newVal);
+                        console.log(oldVal);
+                        console.log("Watch === 데이터 변경 후 로직 실행")
+
+                        previousValue.value = oldVal;
+                    }
+                });
+
+                return {
+                    currentValue,
+                    previousValue
+                
+                }
+            }
+            
+
+        }).mount("#step01");
+    </script>
+
+</body>
+</html>
