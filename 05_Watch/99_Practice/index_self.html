@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Document</title>
+</head>
+
+<!--
+    목표: 입력값에 따라서 깃 api의 이미지를 불러온다.
+    상황: createApp 함수만 받음. watcheffect를 통해 데이터를 불러오고 있고 반응성 변수 정의되어 있음
+
+    **0. 데이터가 잘 받아져 오는지 확인해야한다
+
+    <html>
+    1. 입력창을 만든다: 사용자가 입력한 값을 받아야 함
+        (**v-model) 왜?
+    2. 이미지 출력창을 만든다: 사용자의 입력에 따라 불러온 값을 보여줘야 함
+        (**src 속성에 img url 입력하기) 왜?
+    
+
+
+    <vue>
+    1.**입력 값을 저장할 반응성 변수를 생성
+    2. **입력값이 변하면 이미지가 변경하도록 만들기
+        해결방법**
+            **watch : 변경을 감지할 대상을 지정하고 콜백 함수를 호출한다,
+            1. 입력값을 저장할 반응성 변수의 값을 감지함
+            2. 콜백 함수를 호출함
+            3. 콜백 함수에서 입력된 값에 맞는 값을 추출함 img["입력값"]
+            4. 추출한 값 url을 저장할 반응성 변수에 할당함.
+
+    3. 이미지는 url -> 이미지 url을 img 태그에 표시
+    4. 이미지는 url을 저장할 반응성 변수를 생성
+-->
+
+
+
+<body>
+    <html>
+<!-- 1. 입력창을 만든다: 사용자가 입력한 값을 받아야 함
+    (**v-model) 왜?
+    2. 이미지 출력창을 만든다: 사용자의 입력에 따라 불러온 값을 보여줘야 함
+    (**src 속성에 img url 입력하기) 왜? 
+    이미지태그, 인풋태그 쓰는 거 공부해야겠다-->
+    
+
+    <div id="app">
+
+        <label>입력창</label>
+        <input v-model = "label">
+        <!-- v-model은 입력 요소와 인스턴트 데이터를 양방향 바인딩하는데 사용됨
+        입력된 내용이 데이터와 실시간으로 동기화되어 화면에 표기되고 데이터가 변경되면 요소에도 반영됨. -->
+        <img :src="emoji" width="100px" height="100px"/>
+    </div>
+
+    <script>
+
+        const { createApp, ref, reactive, watch, watchEffect } = Vue;
+
+        createApp({
+            setup(){
+
+            // 1.**입력 값을 저장할 반응성 변수를 생성
+
+                //ref 는 단일값(숫자, 문자열, 불리언 등)이나 단일 객체를 반응형으로 만들 때 사용
+                // 주로 단순한 데이터나 단일값을 관리할 때 사용.
+                
+                //reactive 는 객체 혹은 배열을 반응형으로 반들 때 사용한다.
+                // 주로 여러 속성을 가진 복잡한 데이터를 관리할 때 사용
+
+                // input의 값을 입력하기 위함
+                //label 은 입력한 문자열을 저장하는 데 사용됨
+                const label = ref();
+                // 이미지를 보여주기 위함  
+                // emoji 는 url 을 저장한데 사용됨.              
+                const emoji = ref();
+                // image 목록을 받아오기 위함
+                // emojis 는 {smile: ..., heart: ... } 같은 형태로 여러 데이터가 들어가 있고 
+                // 여러 개의 속성을 내부 반응형으로 관리
+
+                const emojis = reactive({});
+                
+                // 초기 데이터 목록을 받아오기 위함
+                // 이렇게 안해도 상관없으나 오늘 복습을 위함
+
+                //async 비동기적으로 실행된다는 것을 말한다. 즉, 데이터를 불러오는 동안 다른 작업을 계속할 수 있음
+                watchEffect(async () => {
+                    const response =await fetch("https://api.github.com/emojis");
+                    //fetch는 웹에서 데이터를 가져오는 명령어
+                    //await 는 데이터가 완전히 다 받아질 때까지 기다려라 
+                    //그리고 이 데이터들은 response 라는 상자에 담긴다.
+
+                    const data = await response.json();
+                    // response.json() 받아온 데이터를 json 형식으로 변환한다.
+                    // json는 데이터를 주고 받을 때 많이 사용한다.
+                    // 그리고 이 데이터는 data 라는 상자에 담긴다.
+
+                    Object.assign(emojis, data); 
+                    // Object.assign 여러 개의 객체를 하나로 합치는 명령어
+                    // data는 현재 emoji 데이터가 담겨있고 emojis 와 합친다. 
+
+                    console.log(data);
+                });
+
+                // 2. **입력값이 변하면 이미지가 변경하도록 만들기
+                // 해결방법**
+            //     **watch : 변경을 감지할 대상을 지정하고 콜백 함수를 호출한다,
+            //     1. 입력값을 저장할 반응성 변수의 값을 감지함
+            //     2. 콜백 함수를 호출함
+            //     3. 콜백 함수에서 입력된 값에 맞는 값을 추출함 img["입력값"]
+            //     4. 추출한 값 url을 저장할 반응성 변수에 할당함.
+
+                watch (label, (newVal) => {
+                    const url = emojis[newVal];
+                    emoji.value=url;
+                    // watch 함수는 label 을 감시하고 newVal 로 보내준다.
+                    // newVal 이 입력되면, 객체인 emojis 에서 newVal 과 같은 값을 찾는다
+                    // 찾은 걸 url 에 넣어줌.
+                    // emoji.value 에 url 을 담아주면 이걸 반응형 변수인 emoji 가 변하고 그걸 img src 가 감지해서 이미지를 출력해줌.
+                    // ref 객체 자체가 변경되었다고 인식하는게 아니라 '.value' 속성이 변경되었을 때 반응형이 업데이트됨.
+
+
+                });
+
+                return {
+                    label,
+                    emoji,
+                    emojis
+                }
+
+            }
+
+        }).mount("#app");
+
+        // 3. 이미지는 url -> 이미지 url을 img 태그에 표시
+        // 4. 이미지는 url을 저장할 반응성 변수를 생성
+
+
+    </script>
+
+</body>
+</html>
