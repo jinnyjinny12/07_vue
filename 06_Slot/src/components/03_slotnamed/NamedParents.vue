@@ -29,7 +29,7 @@
                 <!-- founder:Evan you -->
             </template>
 
-            <template v-slot:img>
+            <template #img>
                 <img :src="obj.img" alt="img" />
                 
             </template>
