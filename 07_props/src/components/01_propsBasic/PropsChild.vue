@@ -10,6 +10,9 @@ const darkState = inject("childDark");
 
 function darkMode (){
     darkState.value = !darkState.value
+    // darkState.value  는 현재상태 
+    // !darkState.value 현재상태를 반대로 바꿈
+    
 }
 </script>
 

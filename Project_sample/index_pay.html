@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <title>Document</title>
+    <style>
+
+        @font-face{
+          font-family:'DNFBitBitv2';
+          font-style: normal; 
+          font-weight:400; 
+          src:url('//cdn.df.nexon.com/img/common/font/DNFBitBitv2.otf')format('opentype')
+        }
+      
+        @font-face {
+          font-family: 'BMJUA';
+          src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+          font-weight: normal;
+          font-style: normal;
+        }
+      
+      
+        .custom-font1 {
+          font-family: 'DNFBitBitv2', sans-serif;
+          color: #FFB834;
+          text-shadow: 4px 4px 0px #783E19;
+          text-align: center;
+        }
+      
+        .custom-font2 {
+          font-family: 'BMJUA', sans-serif;
+          color: #783E19;
+          text-align: center;
+      
+        }
+      
+        body {
+          background-color: #BA9470;
+        }
+      
+        .box {
+          background-color: #5E7153;
+          margin: 0 auto;
+          margin-top: 50px;
+          width: 500px;
+          height: 800px;
+          display: flex;
+          justify-content: center;
+        }
+      
+        
+      
+        /* 반응형: 넣을까? 말까? */
+      
+        @media (max-width: 768px) {
+          .box {
+            width: 300px;
+            height: 600px;
+      
+          }
+        }
+      
+        @media (max-width: 576px) {
+          .box {
+            width: 200px;
+            height: 400px;
+          }
+        }
+    
+        
+      
+      </style>
+      
+</head>
+    
+<body>
+
+    
+<template>
+      <hearder>
+        <div class="container">
+          <h1 class="custom-font1"> Cafe.js </h1>
+          <div class="flex-contianer">
+  
+            <div class="box">
+              <br>
+              <div calss="custom-font2">
+                <h3 >결제 수단을 선택해주세요</h3>
+              </div>
+              <div>
+                총 결제금액
+                {{ 총 금액 }}
+              </div>
+
+              <div>
+                점선
+              </div>
+              <div = 위치는 박스 왼쪽에>
+                결제수단
+              </div>
+              <div>
+                <button>신용카드</button> 
+              </div>
+              <div>
+                <button>모바일페이</button>
+              </div>
+
+              <div>
+                <h1>
+                    애니메이션
+
+                    <span>c</span>
+                    <span>a</span>
+                    <span>f</span>
+                    <span>e</span>
+                    <span>.</span>
+                    <span>j</span>
+                    <span>a</span>
+                    <span>v</span>
+                    <span>a</span>
+                    <span>s</span>
+                    <span>c</span>
+                    <span>r</span>
+                    <span>i</span>
+                    <span>p</span>
+                    <span>t</span>
+
+                </h1>
+ 
+              </div>
+
+              <div>
+                <button>처음으로</button>
+                <button>이전으로</button>
+                <button>결제하기</button>
+              </div>
+  
+            </div>
+  
+          </div>
+          
+        </div>
+      
+      </hearder>
+  
+  </template>
+    
+</body>
+</html>

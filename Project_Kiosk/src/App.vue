@@ -6,12 +6,16 @@
   <header>
     <hearder>
       <div class="container">
-        <h1 class="custom-font"> Cafe.js </h1>
+        <h1 class="custom-font1"> Cafe.js </h1>
         <div class="flex-contianer">
 
           <div class="box">
             <br>
-            <h5 calss="innertext">결제 수단을 선택해주세요</h5>
+            <div calss="custom-font2">
+              <h3 >결제 수단을 선택해주세요</h3>
+
+            </div>
+
           </div>
 
         </div>
@@ -37,14 +41,21 @@
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-}
+  }
 
 
-  .custom-font{
+  .custom-font1 {
     font-family: 'DNFBitBitv2', sans-serif;
     color: #FFB834;
     text-shadow: 4px 4px 0px #783E19;
     text-align: center;
+  }
+
+  .custom-font2 {
+    font-family: 'BMJUA', sans-serif;
+    color: #783E19;
+    text-align: center;
+
   }
 
   body {
@@ -55,19 +66,13 @@
     background-color: #5E7153;
     margin: 0 auto;
     margin-top: 50px;
-    width: 400px;
+    width: 500px;
     height: 800px;
     display: flex;
     justify-content: center;
   }
 
- 
-  .innertext {
-    font-family: 'BMJUA', sans-serif;
-
-  }
-
-
+  
 
   /* 반응형: 넣을까? 말까? */
 
