@@ -1,0 +1,1049 @@
+
+/* 결제하기 */
+
+position: relative;
+width: 1080px;
+height: 1927px;
+
+
+
+/* Rectangle 259 */
+
+position: absolute;
+width: 1080px;
+height: 1920px;
+left: 0px;
+top: 5px;
+
+background: #BA9470;
+
+
+/* Rectangle 292 */
+
+position: absolute;
+width: 900px;
+height: 1720px;
+left: 90px;
+top: 205px;
+
+background: #5E7153;
+border-radius: 10px 10px 0px 0px;
+
+
+/* Group 158 */
+
+position: absolute;
+width: 401px;
+height: 158px;
+left: 332px;
+top: 10px;
+
+
+
+/* cafe.js */
+
+position: absolute;
+width: 394px;
+height: 146px;
+left: 332px;
+top: 22px;
+
+font-family: 'DNF Bit Bit v2';
+font-style: normal;
+font-weight: 400;
+font-size: 100px;
+line-height: 146px;
+
+/* identical to box height */
+text-align: center;
+
+color: #783E19;
+
+
+
+/* cafe.js */
+
+position: absolute;
+width: 394px;
+height: 146px;
+left: 339px;
+top: 10px;
+
+font-family: 'DNF Bit Bit v2';
+font-style: normal;
+font-weight: 400;
+font-size: 100px;
+line-height: 146px;
+/* identical to box height */
+text-align: center;
+
+color: #FFB834;
+
+
+
+/* Group 120 */
+
+position: absolute;
+width: 1080px;
+height: 100px;
+left: 0px;
+top: 273px;
+
+
+
+/* Rectangle 9 */
+
+position: absolute;
+width: 1080px;
+height: 100px;
+left: 0px;
+top: 273px;
+
+background: #FFB834;
+
+
+/* 주문내역 보기 */
+
+position: absolute;
+width: 750.86px;
+height: 42.25px;
+left: 164.57px;
+top: 301.17px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 30px;
+text-align: center;
+
+color: #FFB834;
+
+
+
+/* 결제 수단을 선택해주세요 */
+
+position: absolute;
+width: 653px;
+height: 73px;
+left: 208px;
+top: 292px;
+
+font-family: 'DNF Bit Bit v2';
+font-style: normal;
+font-weight: 400;
+font-size: 50px;
+line-height: 73px;
+/* identical to box height */
+text-align: center;
+letter-spacing: 0.15em;
+
+color: #783E19;
+
+border: 3px solid #FFEA28;
+
+
+/* Rectangle 265 */
+
+position: absolute;
+width: 900px;
+height: 80px;
+left: 90px;
+top: 446px;
+
+background: #F9ECC9;
+
+
+/* Group 162 */
+
+position: absolute;
+width: 664px;
+height: 127px;
+left: 197px;
+top: 779px;
+
+
+
+/* Rectangle 261 */
+
+position: absolute;
+width: 664px;
+height: 127px;
+left: 197px;
+top: 779px;
+
+background: #F9ECC9;
+border-radius: 20px;
+
+
+/* 신용카드 */
+
+position: absolute;
+width: 181px;
+height: 49px;
+left: 438px;
+top: 818px;
+
+font-family: 'BM JUA_TTF';
+font-style: normal;
+font-weight: 400;
+font-size: 48px;
+line-height: 49px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #783E19;
+
+
+
+/* Group 161 */
+
+position: absolute;
+width: 664px;
+height: 127px;
+left: 197px;
+top: 993px;
+
+
+
+/* Rectangle 270 */
+
+position: absolute;
+width: 664px;
+height: 127px;
+left: 197px;
+top: 993px;
+
+background: #F9ECC9;
+border-radius: 20px;
+
+
+/* 모바일 페이 */
+
+position: absolute;
+width: 243px;
+height: 49px;
+left: 407px;
+top: 1032px;
+
+font-family: 'BM JUA_TTF';
+font-style: normal;
+font-weight: 400;
+font-size: 48px;
+line-height: 49px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #783E19;
+
+
+
+/* Group 163 */
+
+position: absolute;
+width: 188px;
+height: 61px;
+left: 109px;
+top: 632px;
+
+
+
+/* Rectangle 269 */
+
+position: absolute;
+width: 188px;
+height: 61px;
+left: 109px;
+top: 632px;
+
+background: #FFB834;
+border-radius: 20px;
+
+
+/* 결제수단 */
+
+position: absolute;
+width: 130px;
+height: 41px;
+left: 138px;
+top: 642px;
+
+font-family: 'BM JUA_TTF';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 41px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #783E19;
+
+
+
+/* 원 */
+
+position: absolute;
+width: 42px;
+height: 52px;
+left: 797px;
+top: 460px;
+
+font-family: 'BM JUA_TTF';
+font-style: normal;
+font-weight: 400;
+font-size: 50px;
+line-height: 52px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #783E19;
+
+
+
+/* 28,000 */
+
+position: absolute;
+width: 165px;
+height: 52px;
+left: 627px;
+top: 460px;
+
+font-family: 'BM JUA_TTF';
+font-style: normal;
+font-weight: 400;
+font-size: 50px;
+line-height: 52px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #783E19;
+
+
+
+/* 총 결제금액 */
+
+position: absolute;
+width: 214px;
+height: 52px;
+left: 223px;
+top: 460px;
+
+font-family: 'BM JUA_TTF';
+font-style: normal;
+font-weight: 400;
+font-size: 50px;
+line-height: 52px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #783E19;
+
+
+
+/* Group 133 */
+
+position: absolute;
+width: 863px;
+height: 0px;
+left: 109px;
+top: 572px;
+
+
+
+/* Line 1 */
+
+position: absolute;
+width: 44px;
+height: 0px;
+left: 109px;
+top: 572px;
+
+border: 10px solid #783E19;
+
+
+/* Line 2 */
+
+position: absolute;
+width: 44px;
+height: 0px;
+left: 172px;
+top: 572px;
+
+border: 10px solid #783E19;
+
+
+/* Line 3 */
+
+position: absolute;
+width: 44px;
+height: 0px;
+left: 235px;
+top: 572px;
+
+border: 10px solid #783E19;
+
+
+/* Line 4 */
+
+position: absolute;
+width: 44px;
+height: 0px;
+left: 298px;
+top: 572px;
+
+border: 10px solid #783E19;
+
+
+/* Line 5 */
+
+position: absolute;
+width: 44px;
+height: 0px;
+left: 361px;
+top: 572px;
+
+border: 10px solid #783E19;
+
+
+/* Line 6 */
+
+position: absolute;
+width: 44px;
+height: 0px;
+left: 424px;
+top: 572px;
+
+border: 10px solid #783E19;
+
+
+/* Line 7 */
+
+position: absolute;
+width: 44px;
+height: 0px;
+left: 487px;
+top: 572px;
+
+border: 10px solid #783E19;
+
+
+/* Line 8 */
+
+position: absolute;
+width: 44px;
+height: 0px;
+left: 550px;
+top: 572px;
+
+border: 10px solid #783E19;
+
+
+/* Line 9 */
+
+position: absolute;
+width: 44px;
+height: 0px;
+left: 613px;
+top: 572px;
+
+border: 10px solid #783E19;
+
+
+/* Line 10 */
+
+position: absolute;
+width: 44px;
+height: 0px;
+left: 676px;
+top: 572px;
+
+border: 10px solid #783E19;
+
+
+/* Line 11 */
+
+position: absolute;
+width: 44px;
+height: 0px;
+left: 739px;
+top: 572px;
+
+border: 10px solid #783E19;
+
+
+/* Line 12 */
+
+position: absolute;
+width: 44px;
+height: 0px;
+left: 802px;
+top: 572px;
+
+border: 10px solid #783E19;
+
+
+/* Line 13 */
+
+position: absolute;
+width: 44px;
+height: 0px;
+left: 865px;
+top: 572px;
+
+border: 10px solid #783E19;
+
+
+/* Line 14 */
+
+position: absolute;
+width: 44px;
+height: 0px;
+left: 928px;
+top: 572px;
+
+border: 10px solid #783E19;
+
+
+/* Group 139 */
+
+position: absolute;
+width: 818px;
+height: 90px;
+left: 131px;
+top: 1765px;
+
+
+
+/* Group 134 */
+
+position: absolute;
+width: 250px;
+height: 90px;
+left: 131px;
+top: 1765px;
+
+
+
+/* Rectangle 270 */
+
+position: absolute;
+width: 250px;
+height: 90px;
+left: 131px;
+top: 1765px;
+
+background: #F9ECC9;
+border-radius: 10px;
+
+
+/* 처음으로 */
+
+position: absolute;
+width: 128px;
+height: 41px;
+left: 222.82px;
+top: 1789px;
+
+font-family: 'BM JUA_TTF';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 41px;
+
+color: #283E1C;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 14.72%;
+right: 80.65%;
+top: 92.63%;
+bottom: 4.77%;
+
+background: #5E7153;
+
+
+/* Group 136 */
+
+position: absolute;
+width: 250px;
+height: 90px;
+left: 415px;
+top: 1765px;
+
+
+
+/* Rectangle 271 */
+
+position: absolute;
+width: 250px;
+height: 90px;
+left: 415px;
+top: 1765px;
+
+background: #F9ECC9;
+border-radius: 10px;
+
+
+/* Group 135 */
+
+position: absolute;
+width: 192px;
+height: 44px;
+left: 444px;
+top: 1788px;
+
+
+
+/* 🦆 icon "home" */
+
+position: absolute;
+width: 50px;
+height: 43.75px;
+left: 444px;
+top: 1788px;
+
+
+
+/* Vector */
+
+box-sizing: border-box;
+
+position: absolute;
+left: 41.11%;
+right: 54.26%;
+top: 92.79%;
+bottom: 4.94%;
+
+background: #5E7153;
+border-radius: 3px;
+
+
+/* 이전으로 */
+
+position: absolute;
+width: 128px;
+height: 41px;
+left: 508px;
+top: 1791px;
+
+font-family: 'BM JUA_TTF';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 41px;
+
+color: #283E1C;
+
+
+
+/* Group 138 */
+
+position: absolute;
+width: 250px;
+height: 90px;
+left: 699px;
+top: 1765px;
+
+
+
+/* Rectangle 272 */
+
+position: absolute;
+width: 250px;
+height: 90px;
+left: 699px;
+top: 1765px;
+
+background: #F9ECC9;
+border-radius: 10px;
+
+
+/* Group 137 */
+
+position: absolute;
+width: 189px;
+height: 41px;
+left: 729px;
+top: 1789px;
+
+
+
+/* 결제하기 */
+
+position: absolute;
+width: 132px;
+height: 41px;
+left: 786px;
+top: 1789px;
+
+font-family: 'BM JUA_TTF';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 41px;
+
+color: #283E1C;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 67.5%;
+right: 28.8%;
+top: 92.89%;
+bottom: 5.03%;
+
+background: #5E7153;
+
+
+/* Group 195 */
+
+position: absolute;
+width: 720.23px;
+height: 204.44px;
+left: 180px;
+top: 1385px;
+
+
+
+/* Vector */
+
+position: absolute;
+width: 36.61px;
+height: 63.77px;
+left: 863.62px;
+top: 1513px;
+
+background: #783E19;
+
+
+/* Vector */
+
+position: absolute;
+width: 43.47px;
+height: 61.25px;
+left: 809.91px;
+top: 1526.65px;
+
+background: #783E19;
+
+
+/* Vector */
+
+position: absolute;
+width: 16.17px;
+height: 63.77px;
+left: 780.77px;
+top: 1513px;
+
+background: #783E19;
+
+
+/* Vector */
+
+position: absolute;
+width: 35.42px;
+height: 50.12px;
+left: 734.25px;
+top: 1526.65px;
+
+background: #783E19;
+
+
+/* Vector */
+
+position: absolute;
+width: 41.23px;
+height: 50.12px;
+left: 681.72px;
+top: 1526.65px;
+
+background: #783E19;
+
+
+/* Vector */
+
+position: absolute;
+width: 40.95px;
+height: 50.12px;
+left: 628.5px;
+top: 1526.65px;
+
+background: #783E19;
+
+
+/* Vector */
+
+position: absolute;
+width: 44.24px;
+height: 50.12px;
+left: 572px;
+top: 1526.65px;
+
+background: #783E19;
+
+
+/* Vector */
+
+position: absolute;
+width: 45.78px;
+height: 50.19px;
+left: 514.43px;
+top: 1526.58px;
+
+background: #783E19;
+
+
+/* Vector */
+
+position: absolute;
+width: 44.24px;
+height: 50.12px;
+left: 457.71px;
+top: 1526.65px;
+
+background: #783E19;
+
+
+/* Vector */
+
+position: absolute;
+width: 25.69px;
+height: 76.44px;
+left: 419.75px;
+top: 1513px;
+
+background: #783E19;
+
+
+/* Vector */
+
+position: absolute;
+width: 15.26px;
+height: 15.54px;
+left: 400.01px;
+top: 1561.23px;
+
+background: #783E19;
+
+
+/* Vector */
+
+position: absolute;
+width: 43.54px;
+height: 50.12px;
+left: 342.87px;
+top: 1526.65px;
+
+background: #783E19;
+
+
+/* Vector */
+
+position: absolute;
+width: 38.57px;
+height: 63.77px;
+left: 293.58px;
+top: 1513px;
+
+background: #783E19;
+
+
+/* Vector */
+
+position: absolute;
+width: 44.24px;
+height: 50.12px;
+left: 238.76px;
+top: 1526.65px;
+
+background: #783E19;
+
+
+/* Vector */
+
+position: absolute;
+width: 41.23px;
+height: 50.12px;
+left: 187px;
+top: 1526.65px;
+
+background: #783E19;
+
+
+/* Vector */
+
+position: absolute;
+width: 36.61px;
+height: 63.77px;
+left: 856.62px;
+top: 1385px;
+
+background: #FFB834;
+
+
+/* Vector */
+
+position: absolute;
+width: 43.47px;
+height: 61.25px;
+left: 802.91px;
+top: 1398.65px;
+
+background: #FFB834;
+
+
+/* Vector */
+
+position: absolute;
+width: 16.17px;
+height: 63.77px;
+left: 773.77px;
+top: 1385px;
+
+background: #FFB834;
+
+
+/* Vector */
+
+position: absolute;
+width: 35.42px;
+height: 50.12px;
+left: 727.25px;
+top: 1398.65px;
+
+background: #FFB834;
+
+
+/* Vector */
+
+position: absolute;
+width: 41.23px;
+height: 50.12px;
+left: 674.72px;
+top: 1398.65px;
+
+background: #FFB834;
+
+
+/* Vector */
+
+position: absolute;
+width: 40.95px;
+height: 50.12px;
+left: 621.5px;
+top: 1398.65px;
+
+background: #FFB834;
+
+
+/* Vector */
+
+position: absolute;
+width: 44.24px;
+height: 50.12px;
+left: 565px;
+top: 1398.65px;
+
+background: #FFB834;
+
+
+/* Vector */
+
+position: absolute;
+width: 45.78px;
+height: 50.19px;
+left: 507.43px;
+top: 1398.58px;
+
+background: #FFB834;
+
+
+/* Vector */
+
+position: absolute;
+width: 44.24px;
+height: 50.12px;
+left: 450.71px;
+top: 1398.65px;
+
+background: #FFB834;
+
+
+/* Vector */
+
+position: absolute;
+width: 25.69px;
+height: 76.44px;
+left: 412.75px;
+top: 1385px;
+
+background: #FFB834;
+
+
+/* Vector */
+
+position: absolute;
+width: 15.26px;
+height: 15.54px;
+left: 393.01px;
+top: 1433.23px;
+
+background: #FFB834;
+
+
+/* Vector */
+
+position: absolute;
+width: 43.54px;
+height: 50.12px;
+left: 335.87px;
+top: 1398.65px;
+
+background: #FFB834;
+
+
+/* Vector */
+
+position: absolute;
+width: 38.57px;
+height: 63.77px;
+left: 286.58px;
+top: 1385px;
+
+background: #FFB834;
+
+
+/* Vector */
+
+position: absolute;
+width: 44.24px;
+height: 50.12px;
+left: 231.76px;
+top: 1398.65px;
+
+background: #FFB834;
+
+
+/* Vector */
+
+position: absolute;
+width: 41.23px;
+height: 50.12px;
+left: 180px;
+top: 1398.65px;
+
+background: #FFB834;
