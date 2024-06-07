@@ -20,5 +20,5 @@
 
 <template>
     <h1>name: {{ $route.query.name }} age: {{ $route.query.age }}</h1>
-
+    //
 </template>
