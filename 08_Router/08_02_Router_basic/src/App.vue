@@ -22,6 +22,8 @@
         <h2>NestedRouter</h2>
         <nav>
             <RouterLink to="/" replace active-class="active"></RouterLink>
+            <button @click="()=>router.push('/nested')"> 신용카드</button>
+
             <RouterLink to="/nested">중첩 인덱스</RouterLink>
             <RouterLink to="/nested/view">중첩 라우터</RouterLink>
         </nav>
