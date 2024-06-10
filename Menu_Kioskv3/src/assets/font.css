@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'BMJUA';
+    src: url('./BMJUA_ttf.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DNFBitBitv2';
+    src: url('./DNFBitBitv2.otf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+.font-Bmjua{
+    font-family: BMJUA;
+}
+
+.font-DNFB{
+    font-family: DNFBitBitv2;
+}
