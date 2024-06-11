@@ -28,7 +28,7 @@ import TheWelcome from '@/components/menu/TheWelcome.vue';
     <TheWelcome />
    </main>
  </div>
-  <!-- <button class="custom-button" @click="()=>router.push('/popup')">일단버튼</button> -->
+  <button class="custom-button" @click="()=>router.push('/popup')">일단버튼</button>
 
 </template>
 
