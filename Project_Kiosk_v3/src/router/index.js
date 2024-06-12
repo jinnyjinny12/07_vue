@@ -3,6 +3,7 @@ import ButtonHome from '@/views/ButtonHome.vue';
 import Popupview from "@/views/Popupview.vue";
 import Popupview2 from "@/views/Popupview2.vue";
 import RootRouter from '@/views/RootRouter.vue';
+import Finalview from '@/views/Finalview.vue';
 
 
 const router = createRouter({
@@ -11,12 +12,20 @@ const router = createRouter({
         {
             path: '/',
             name: 'home',
-            component: ButtonHome
+            component: Paymentview
         },
         {
             path: '/popup1',
             name: 'popup1',
-            component: Popupview
+            component: Popupview,
+            children:[
+                {
+                    path:'final',
+                    name: 'final',
+                    component:Finalview
+                
+                }
+            ]
         },
         {
             path: '/popup2',

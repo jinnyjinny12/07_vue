@@ -1,33 +1,19 @@
 <script setup>
 import {useRouter} from  'vue-router';
 // popup 은 즉 HIDEENVIEW 
-
 const router = useRouter();
-function goToFinal() {
-  router.push('/popup1/final');
-}
-
-
 </script>
 
 <template>
     <!-- <h1> 이건 팝업입니다</h1> -->
     <div class="popup-container">
-        
-        <div class="text"> IC카드를 삽입하시오</div>
-
-        <img src="../../image/pay.svg" alt="pay" class="pop-image" />
+        <div clas="text"> IC카드를 삽입하시오</div>
+        <img src="../../assets/image/pay.svg" alt="pay" class="pop-image" />
         <div class="button-contianer">
           <button class="cancel-button" @click="()=>router.go(-1)">결제취소</button>
-          <button class="approve-button" @click="goToFinal">승인하기</button>
+          <button class="approve-button" @click="$router.push('/bill')">승인하기</button>
         </div>
-        
-
     </div>
-
-    
-
-
 </template>
 
 <style>
@@ -55,10 +41,10 @@ function goToFinal() {
     flex-grow: 1;
 }
 
-/* .text {
+.text {
   margin-top: 20; /* h2 요소의 위 여백 제거 */
-  /* margin-bottom: 20;
-} */ 
+  margin-bottom: 20;
+}
 
 .button-container {
   display: flex; /* 버튼들을 가로로 정렬하기 위해 flex 사용 */

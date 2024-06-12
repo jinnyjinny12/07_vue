@@ -1,0 +1,13 @@
+        .container {
+            position: relative;
+            width: 1080px;
+            height: 1920px;
+            margin: auto;
+            background: linear-gradient(
+            180deg,
+            #5e7153 20%,
+            #af9544 50%,
+            #d7a63c 75%,
+            #ffb834 100%
+            );
+        }
